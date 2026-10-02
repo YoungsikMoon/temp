@@ -1,23 +1,18 @@
-# DIR Info
-- modules : deep(딥러닝 모듈), web(웹 모듈)
-- datas : 각종 이미지, 영상, CSV 등 자료 모음.
+# CNN Web Demo · 손글씨 이미지 추론 실험
 
-# 프로젝트 수행
-2023년 1월부터 2월부터 알파코 딥러닝 부트캠프
+학습한 CNN 모델을 FastAPI의 이미지 업로드 요청에 연결해 보는 초기 웹 데모입니다. 이미지를 받아 28×28 흑백 입력으로 전처리하고, PyTorch 모델 추론 결과를 템플릿에 전달하는 흐름을 실험했습니다.
 
-# 프로젝트 정보
-- WEB : FLASK
-- DL Model : CNN
-- DATASET : 0~9의 숫자 이미지로 이루어진 MNIST train 6만장 test 3만장
+## 구성
 
-# 결과 아웃풋
-![output](https://github.com/YoungsikMoon/kiw/assets/162241674/bc8de4e1-538a-425f-9fe6-1670f2fb40a3) 
+- [저장소 코드](modules): 웹 처리와 모델 관련 모듈
+- [실험 자료](datas): 결과·구조 이미지
 
-# 아키텍처
-![architecture](https://github.com/YoungsikMoon/kiw/assets/162241674/721c3f9a-e18e-492c-9912-553dee462957)
+![실험 결과](datas/output.jpg)
 
-# 참고
-Krizhevsky, Alex, Ilya Sutskever, and Geoffrey E. Hinton. "Imagenet classification with deep convolutional neural networks." Advances in neural information processing systems 25 (2012). 
+![구조 자료](datas/architecture.jpg)
 
-# 컨클루전
-CNN으로는 0~9 이미지의 학습 성능이 잘 나왔지만 transform을 어떻게 주냐에 따라서 성능을 감소시키는 기법들이 뭐인지 리포트하고 싶었다.
+## 현재 상태
+
+과거 학습 기록으로 보관한 저장소입니다. 추론 코드가 참조하는 HTML 템플릿 일부와 실행 경로를 보완해야 하므로, 복제 후 바로 실행할 수 있는 완성 앱은 아닙니다. 학습 데이터 수나 정확도는 별도의 검증 결과로 제시하지 않습니다.
+
+재실행하려면 모델 구조와 가중치의 대응 관계, 업로드 파일 처리, 템플릿 경로를 먼저 확인해야 합니다. 모델 추론을 HTTP 요청에 연결하는 학습 사례로 읽어 주세요.
